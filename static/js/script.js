@@ -1,3 +1,5 @@
 /** @format */
 
-alert("hy");
+// alert("hy");
+console.log("Hello world");
+alert("what my name");
