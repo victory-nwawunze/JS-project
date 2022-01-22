@@ -29,5 +29,11 @@
 }
 .flex-box-container-2{
     display: flex;
+    justify-content: space-around;
     border: 1px solid blue;
+    flex-wrap: wrap;
+}
+.flex-box-container-2 img{
+    border: 1px solid green;
+    padding: 10px;
 }

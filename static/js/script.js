@@ -17,3 +17,8 @@ function ageInDays() {
 function reset() {
   document.getElementById("ageInDays").remove();
 }
+
+// Challenge 2: Cat generate
+// function generateCat(){
+//     var image = document.createElement('img')
+// }
