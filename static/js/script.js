@@ -35,8 +35,9 @@ function rpsGame(yourChoice) {
   console.log("computer choice: ", botChoice);
   results = decideWinner(humanChoice, botChoice); //[0 - 1] human lost | bot won
   console.log("Results ==> ", results);
-  // message = finalResult(results) //{message:"You won", color:"green"} !
-  //rpsFrontEnd(yourChoice.id, botChoice, message);
+  message = finalMessage(results); //{message:"You won", color:"green"} !
+  console.log(message);
+  rpsFrontEnd(yourChoice.id, botChoice, message);
 }
 
 function randToRpsInt() {
@@ -54,4 +55,46 @@ function decideWinner(yourChoice, computerChoice) {
   var yourScore = rpsDatabase[yourChoice][computerChoice];
   var computerScore = rpsDatabase[computerChoice][yourChoice];
   return [yourScore, computerScore];
+}
+function finalMessage([yourScore, computerScore]) {
+  if (yourScore === 0) {
+    return { message: "You Lost", color: "red" };
+  } else if (yourScore === 0.5) {
+    return { message: "You Tied!", color: "yellow" };
+  } else {
+    return { message: "You Won", color: "Green" };
+  }
+}
+function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
+  var imageDatabase = {
+    rock: document.getElementById("rock").src,
+    paper: document.getElementById("paper").src,
+    scissors: document.getElementById("scissors").src,
+  };
+  //  Let remove all the images
+  document.getElementById("rock").remove();
+  document.getElementById("paper").remove();
+  document.getElementById("scissors").remove();
+
+  var humanDiv = document.createElement("div");
+  var botDiv = document.createElement("div");
+  var messageDiv = document.createElement("div");
+
+  humanDiv.innerHTML =
+    "<img src='" +
+    imageDatabase[humanImageChoice] +
+    "' height=150 width=150 style='box-shadow:0px 10px 50px rgba(37,50,233,1);'>";
+  botDiv.innerHTML =
+    "<img src='" +
+    imageDatabase[botImageChoice] +
+    "' height=150 width=150 style='box-shadow:0px 10px 50px rgba(243,38,24,1);'>";
+  messageDiv.innerHTML =
+    "<h1 style='color': " +
+    finalMessage["color"] +
+    "; font-size: 60px; padding:30px; '>" +
+    finalMessage["message"] +
+    "</h1>";
+  document.getElementById("flex-box-rps-div").appendChild(botDiv);
+  document.getElementById("flex-box-rps-div").appendChild(messageDiv);
+  document.getElementById("flex-box-rps-div").appendChild(humanDiv);
 }
