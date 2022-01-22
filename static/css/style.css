@@ -37,3 +37,23 @@
     padding: 10px;
     box-shadow: 0px 10px 50px rgba(0,0,0,0.7);
 }
+
+/* Challenge 3: Create a Rock, Paper, Scissors (CSS)*/
+.flex-box-rps img:hover{
+    box-shadow: 0px 10px 50px rgba(37, 50,233, 1);
+}
+.container-3{
+       border: 1px solid black;
+       margin: 0 auto;
+       width: 75%;
+       text-align: center;
+}
+.flex-box-rps{
+      display: flex;
+      padding: 10px;
+      border: 1px solid black;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      flex-direction: row;
+}
+/* 0023929408 */
