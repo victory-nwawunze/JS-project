@@ -140,3 +140,17 @@ function buttonColorReset() {
     all_buttons[i].classList.add(copyAllButtons[i]);
   }
 }
+
+// button Random functionality
+function randomColor() {
+  var choices = [
+    "btn btn-primary",
+    "btn btn-danger",
+    "btn btn-danger",
+    "btn btn-success",
+    "btn btn-warning",
+  ];
+  for (let i = 0; i < all_buttons.length; i++) {
+    var randomNumber = Math.floor(Math.random() * 4);
+  }
+}
