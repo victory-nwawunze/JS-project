@@ -56,3 +56,19 @@
       flex-wrap: wrap;
       flex-direction: row;
 }
+
+/* Challenge 4: color changer (CSS) */
+.flex-box-pick-color{
+      display: flex;
+      padding: 10px;
+      border: 1px solid black;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      flex-direction: row;
+}
+.container-4{
+      border: 1px solid black;
+      margin: 0 auto;
+      width: 75%;
+      text-align: center;
+}
