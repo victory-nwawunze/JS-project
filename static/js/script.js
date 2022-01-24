@@ -166,6 +166,10 @@ document
   .querySelector("#blackjack-hit-button")
   .addEventListener("click", blackjackHit);
 
+document
+  .querySelector("#blackjack-deal-button")
+  .addEventListener("click", blackjackDeal);
+
 function blackjackHit() {
   showCard(YOU);
 }
@@ -176,11 +180,17 @@ document
   .addEventListener("click", blackjackHit);
 document
   .querySelector("#blackjack-deal-button")
-  .addEventListener("click", blackjackHit);
+  .addEventListener("click", blackjackDeal);
 
 function showCard(activePlayer) {
   let cardImage = document.createElement("img");
   cardImage.src = "static/images/Q.png";
   document.querySelector(activePlayer["div"]).appendChild(cardImage);
   hitSound.play();
+}
+
+function blackjackDeal() {
+  let yourImages = document.querySelector("#your-box").querySelectorAll("img");
+  console.log(yourImages);
+  yourImages[0].remove();
 }
