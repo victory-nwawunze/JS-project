@@ -191,6 +191,7 @@ function showCard(activePlayer) {
 
 function blackjackDeal() {
   let yourImages = document.querySelector("#your-box").querySelectorAll("img");
-  console.log(yourImages);
-  yourImages[0].remove();
+  for (i = 0; i < yourImages.length; i++) {
+    yourImages[i].remove();
+  }
 }
