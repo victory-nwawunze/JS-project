@@ -72,3 +72,60 @@
       width: 75%;
       text-align: center;
 }
+/* Challenge 5: Black Jack (HTML) -- */
+.container-5{
+      border: 1px solid black;
+      margin: 0 auto;
+      width: 75%;
+      text-align: center;
+}
+.flex-blackjack-row-1{
+     display: flex;
+     padding: 10px;
+     border: 1px solid black;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     flex-direction: row;
+}
+.flex-blackjack-row-2{
+     display: flex;
+     padding: 10px;
+     border: 1px solid black;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     flex-direction: row;
+}
+.flex-blackjack-row-3 {
+     display: flex;
+     padding: 10px;
+     border: 1px solid black;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     flex-direction: row;
+}
+.flex-blackjack-row-2 button{
+  border: 1px solid black;
+  padding: 10px;
+}
+.flex-blackjack-row-2 div{
+  border: 1px solid black;
+  padding: 10px;
+}
+.flex-blackjack-row-1, .flex-blackjack-row-2{
+    background: url('https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1218355494?k=20&m=1218355494&s=612x612&w=0&h=7izk2bQU_LDnKLLLbwAolAo4kwUmcwr_mo8_Vr7955w=') center;
+    color: #ffff;
+}
+.flex-blackjack-row-1 img{
+   height: 25%;
+}
+.flex-blackjack-row-1 div{
+   border: 1px solid black;
+   padding: 10px;
+   flex: 1;
+   text-align: center;
+   height: 350px;
+}
+table, th, td{
+    padding: 5px;
+    border: 1px solid black;
+}
