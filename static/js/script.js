@@ -165,11 +165,22 @@ const DEALER = blackjackGame["dealer"];
 document
   .querySelector("#blackjack-hit-button")
   .addEventListener("click", blackjackHit);
+
 function blackjackHit() {
-  let cardImage = document.createElement("img");
-  cardImage.src = "static/images/Q.png";
-  document.querySelector(YOU["div"]).appendChild(cardImage);
-  hitSound.play();
+  showCard(YOU);
 }
 
 const hitSound = new Audio("static/sounds/swish.m4a");
+document
+  .querySelector("#blackjack-hit-button")
+  .addEventListener("click", blackjackHit);
+document
+  .querySelector("#blackjack-deal-button")
+  .addEventListener("click", blackjackHit);
+
+function showCard(activePlayer) {
+  let cardImage = document.createElement("img");
+  cardImage.src = "static/images/Q.png";
+  document.querySelector(activePlayer["div"]).appendChild(cardImage);
+  hitSound.play();
+}
