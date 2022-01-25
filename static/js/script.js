@@ -224,7 +224,7 @@ function showCard(card, activePlayer) {
 }
 
 function blackjackDeal() {
-  computeWinner();
+  showResult(computeWinner());
   let yourImages = document.querySelector("#your-box").querySelectorAll("img");
   let dealerImages = document
     .querySelector("#dealer-box")
@@ -272,7 +272,6 @@ function dealerLogic() {
   showCard(card, DEALER);
   updateScore(card, DEALER);
   showScore(DEALER);
-  showResult();
 }
 
 function computeWinner() {
