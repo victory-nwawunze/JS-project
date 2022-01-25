@@ -232,8 +232,8 @@ function blackjackDeal() {
   }
   YOU["score"] = 0;
   DEALER["score"] = 0;
-  document.querySelector("#your-black-result").textContent = 0;
-  document.querySelector("#dealer-black-result").textContent = 0;
+  document.querySelector("#your-blackjack-result").textContent = 0;
+  document.querySelector("#dealer-blackjack-result").textContent = 0;
 }
 
 function updateScore(card, activePlayer) {
