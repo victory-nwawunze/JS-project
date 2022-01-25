@@ -186,6 +186,10 @@ document
   .querySelector("#blackjack-deal-button")
   .addEventListener("click", blackjackDeal);
 
+document
+  .querySelector("#blackjack-stand-button")
+  .addEventListener("click", dealerLogic);
+
 function blackjackHit() {
   let card = randomCard();
   console.log(card);
@@ -258,4 +262,11 @@ function showScore(activePlayer) {
     document.querySelector(activePlayer["scoreSpan"]).textContent =
       activePlayer["score"];
   }
+}
+
+function dealerLogic() {
+  let card = randomCard();
+  showCard(card, DEALER);
+  updateScore(card, DEALER);
+  showScore(DEALER);
 }
