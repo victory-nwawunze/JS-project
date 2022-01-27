@@ -175,6 +175,9 @@ let blackjackGame = {
     Q: 10,
     A: [1, 11],
   },
+  wins: 0,
+  losses: 0,
+  draws: 0,
 };
 const YOU = blackjackGame["you"];
 const DEALER = blackjackGame["dealer"];
@@ -281,21 +284,21 @@ function computeWinner() {
   let winner;
   if (YOU["score"] <= 21) {
     if (YOU["score"] > DEALER["score"] || DEALER["score"] > 21) {
-      console.log("You Won");
+      blackjackGame["wins"]++;
       winner = YOU;
     } else if (YOU["score"] < DEALER["score"]) {
-      console.log("You lost");
+      blackjackGame["losses"]++;
       winner = DEALER;
     } else if (YOU["score"] === DEALER["score"]) {
-      console.log("You drew");
+      blackjackGame["draws"]++;
     }
   } else if (YOU["score"] > 21 && DEALER["score"] <= 21) {
-    console.log("You lost");
+    blackjackGame["losses"]++;
     winner = DEALER;
   } else if (YOU["score"] > 21 && DEALER["score"] > 21) {
-    console.log("You drew");
+    blackjackGame["draws"]++;
   }
-  console.log("winner", winner);
+  console.log(blackjackGame);
   return winner;
 }
 
@@ -303,6 +306,7 @@ function showResult(winner) {
   let message, messageColor;
 
   if (winner === YOU) {
+    document.querySelector("#wins").textContent = blackjackGame["wins"];
     message = "You won";
     messageColor = "green";
     winSound.play();
