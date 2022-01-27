@@ -245,6 +245,8 @@ function blackjackDeal() {
   document.querySelector("#dealer-blackjack-result").textContent = 0;
   document.querySelector("#your-blackjack-result").style.color = "ffffff";
   document.querySelector("#dealer-blackjack-result").style.color = "ffffff";
+  document.querySelector("#blackjack-result").textContent = "Let's Play";
+  document.querySelector("#blackjack-result").style.color = "black";
 }
 
 function updateScore(card, activePlayer) {
@@ -311,10 +313,12 @@ function showResult(winner) {
     messageColor = "green";
     winSound.play();
   } else if (winner === DEALER) {
+    document.querySelector("#losses").textContent = blackjackGame["losses"];
     message = "You lost";
     messageColor = "red";
     lossSound.play();
   } else {
+    document.querySelector("#draws").textContent = blackjackGame["draws"];
     message = "You drew!";
     messageColor = "black";
   }
