@@ -178,6 +178,8 @@ let blackjackGame = {
   wins: 0,
   losses: 0,
   draws: 0,
+  isStand: false,
+  turnsOver: false,
 };
 const YOU = blackjackGame["you"];
 const DEALER = blackjackGame["dealer"];
@@ -194,12 +196,12 @@ document
   .addEventListener("click", dealerLogic);
 
 function blackjackHit() {
-  let card = randomCard();
-  console.log(card);
-  showCard(card, YOU);
-  updateScore(card, YOU);
-  showScore(YOU);
-  console.log(YOU["score"]);
+  if (blackjackGame["isStand"] === false) {
+    let card = randomCard();
+    showCard(card, YOU);
+    updateScore(card, YOU);
+    showScore(YOU);
+  }
 }
 
 const hitSound = new Audio("static/sounds/swish.m4a");
@@ -272,13 +274,16 @@ function showScore(activePlayer) {
 }
 
 function dealerLogic() {
+  blackjackGame["isStand"] = true;
   let card = randomCard();
   showCard(card, DEALER);
   updateScore(card, DEALER);
   showScore(DEALER);
   if (DEALER["score"] > 15) {
+    blackjackGame["turnsOver"] = true;
     let winner = computeWinner();
     showResult(winner);
+    console.log(blackjackGame["turnsOver"]);
   }
 }
 
